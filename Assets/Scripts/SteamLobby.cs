@@ -55,6 +55,8 @@ public class SteamLobby : MonoBehaviour
         manager.StartHost();
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), hostAdressKey, SteamUser.GetSteamID().ToString());
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "name", SteamFriends.GetPersonaName().ToString() + " 'S LOBBY");
+
+        SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "classes", ManagerClasses.classes.ToString());
     }
 
     private void OnJoinRequest(GameLobbyJoinRequested_t callback)
@@ -106,8 +108,10 @@ public class SteamLobby : MonoBehaviour
         LobbyListManager.instance.DisplayLobbies(lobbyIDs, result);
     }
 
-    public void JoinLobby(CSteamID lobbyID)
+    public void JoinLobby(CSteamID lobbyID, int classes)
     {
+        if(classes == ManagerClasses.classes) { print("klasa pasuje i wynosi: " + classes); }
+
         SteamMatchmaking.JoinLobby(lobbyID);
     }
 

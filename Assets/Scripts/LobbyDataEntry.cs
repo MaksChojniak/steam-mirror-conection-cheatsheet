@@ -11,6 +11,9 @@ public class LobbyDataEntry : MonoBehaviour
     public string lobbyName;
     public Text lobbyNameText;
 
+    //add from me
+    public int classes;
+
 
     public void SetLobbyData()
     {
@@ -27,6 +30,6 @@ public class LobbyDataEntry : MonoBehaviour
 
     public void JoinLobby()
     {
-        SteamLobby.instance.JoinLobby(lobbyID);
+        SteamLobby.instance.JoinLobby(lobbyID, classes);
     }
 }

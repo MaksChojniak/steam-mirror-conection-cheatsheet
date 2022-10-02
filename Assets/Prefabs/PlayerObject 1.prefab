@@ -29,6 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1410245821242483251}
+  - {fileID: 3814069149283902331}
   m_Father: {fileID: 8874235154588669842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,13 +57,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3814069149283456539}
-  m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
+  m_LocalRotation: {x: 0.27563733, y: -0, z: -0, w: 0.96126175}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3814069149283797403}
-  m_Father: {fileID: 8874235154588669842}
+  m_Father: {fileID: 237600658164177542}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 32, y: 0, z: 0}
 --- !u!114 &3814069148418945545
@@ -325,7 +326,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 237600658164177542}
-  - {fileID: 3814069149283902331}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -393,6 +393,7 @@ MonoBehaviour:
   conncetionID: 0
   playerIdNumber: 0
   playerSteamID: 0
+  classes: 1
   playerName: 
   ready: 0
 --- !u!114 &1320046422805899620
@@ -423,6 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e477b706e1a6a7e44a3ad60b9008cae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   followCamera: {fileID: 3814069149283456539}
 --- !u!114 &4829383659891081133
 MonoBehaviour:

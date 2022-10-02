@@ -11,6 +11,7 @@ public class PlayerObjectController : NetworkBehaviour
     [SyncVar] public int conncetionID;
     [SyncVar] public int playerIdNumber;
     [SyncVar] public ulong playerSteamID;
+    [SyncVar] public int classes;
 
     [SyncVar(hook = nameof(PlayerNameUpdate))] public string playerName;
 
@@ -33,13 +34,15 @@ public class PlayerObjectController : NetworkBehaviour
     //  dodatkowo multiplayer 3d
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);   
+        DontDestroyOnLoad(this.gameObject); 
+        
     }
 
     public override void OnStartAuthority()
     {
         CmdSetPlayerName(SteamFriends.GetPersonaName().ToString());
         gameObject.name = "LocalGamePlayer";
+        classes = ManagerClasses.classes;
         LobbyController.instance.FindLocalPlayer();
         LobbyController.instance.UpdateLobbyName();
     }

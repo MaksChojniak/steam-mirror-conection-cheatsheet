@@ -46,6 +46,9 @@ public class LobbyListManager : MonoBehaviour
                 createdItem.GetComponent<LobbyDataEntry>().lobbyName =
                     SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDs[i].m_SteamID, "name");
 
+                createdItem.GetComponent<LobbyDataEntry>().classes = int.Parse(
+                    SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDs[i].m_SteamID, "classes" ) );
+
                 createdItem.GetComponent<LobbyDataEntry>().SetLobbyData();
 
                 createdItem.transform.SetParent(lobbyListContent.transform);
