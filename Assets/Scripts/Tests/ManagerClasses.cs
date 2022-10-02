@@ -14,12 +14,11 @@ public class ManagerClasses : MonoBehaviour
     {
         currValue = classes;
 
-        if(update == true)
-        {
-            classes = value;
-            update = false;
-        }
     }
 
+    public void SetClasses(int value)
+    {
+        classes = value;
+    }
 
 }
